@@ -1,13 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
-
-:root {
-	--primary-voilet: hsl(263, 55%, 52%);
-	--primary-gray-blue: hsl(217, 19%, 35%);
-	--primary-blackish-blue: hsl(219, 29%, 14%);
-	--primary-white: hsl(0, 0%, 100%);
-	--neutral-gray: hsl(0, 0%, 81%);
-	--neutral-blue: hsl(210, 46%, 95%);
-}
 * {
 	margin: 0;
 	padding: 0;
@@ -15,85 +6,97 @@
 }
 
 body {
+	max-height: 100vh;
+	background-color: hsl(210, 46%, 95%);
 	font-size: 16px;
 	font-family: 'Barlow Semi Condensed', sans-serif;
-	background-color: var(--neutral-blue);
+	overflow: hidden;
 }
-h3 {
-	opacity: 50%;
+
+.container {
+	margin: 0 auto;
+	margin-top: 70px;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	grid-template-columns: repeat(4, 260px);
+	gap: 1rem;
+	grid-template-areas:
+		'test-1 test-1 test-2 test-5'
+		'test-3 test-4 test-4 test-5';
+	letter-spacing: 0.03px;
 }
-h1 {
-	line-height: 1.3;
-	padding-top: 20px;
+
+.white {
+	color: white;
 }
+.dark {
+	color: hsl(217, 19%, 35%);
+}
+
 p {
 	opacity: 70%;
-	line-height: 1.5;
-	font-size: 20px;
-	padding-top: 20px;
+	font-weight: 500;
+	line-height: 1.2rem;
 }
-.container {
-	width: 80vw;
-	margin: 80px auto;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	grid-template-areas:
-		'col1 col1 col2 col3'
-		'col4 col5 col5 col3';
+h5 {
+	opacity: 50%;
+	font-weight: 500;
 }
-.container .daniel {
-	grid-area: col1;
-	background-color: var(--primary-voilet);
-	background-image: url('./images/bg-pattern-quotation.svg');
-	background-repeat: no-repeat;
-	background-size: 150px;
-	background-position-x: 80%;
-	color: var(--primary-white);
+h2 {
+	margin: 20px auto;
+}
+.name {
+	font-weight: 500;
 }
 
-.container .jonathan {
-	grid-area: col2;
-	background-color: var(--primary-gray-blue);
-	color: var(--primary-white);
+.dani-img {
+	border: 3px solid #a775f1;
 }
-
-.container .jeanette {
-	grid-area: col4;
-	background-color: var(--primary-white);
-}
-
-.container .patrick {
-	grid-area: col5;
-	background-color: var(--primary-blackish-blue);
-	color: var(--primary-white);
-}
-
-.container .kira {
-	grid-area: col3;
-	background-color: var(--primary-white);
-}
-.profile {
-	display: flex;
-}
-.intro {
-	padding-left: 30px;
-}
-
-.grid {
-	border-radius: 10px;
-	margin: 20px;
-	padding: 20px 30px;
-}
-.grid img {
+.user-img {
+	width: 40px;
+	height: 40px;
+	float: left;
 	border-radius: 50%;
+	margin: 0 20px 0 0;
+}
+.head-container {
+	margin-bottom: 20px;
 }
 
-@media (max-width: 500px) {
-	.container {
-		display: block;
-	}
-	.grid {
-		margin: 30px;
-	}
-} ;
+.test {
+	padding: 25px 35px;
+	border-radius: 0.8rem;
+	line-height: 1.4;
+	box-shadow: 10px 10px 26px 0px rgb(0 0 0 / 15%);
+	min-height: 100%;
+}
+
+.daniel {
+	background-color: hsl(263, 55%, 52%);
+	background-image: url(images/bg-pattern-quotation.svg);
+	background-repeat: no-repeat;
+	background-size: 24%;
+	background-position: 80% 0;
+	border-radius: 15px;
+	grid-area: test-1;
+}
+.jonathan {
+	grid-area: test-2;
+	background-color: hsl(217, 19%, 35%);
+}
+
+.kira {
+	grid-area: test-5;
+	background-color: white;
+}
+
+.jeanette {
+	grid-area: test-3;
+	background-color: white;
+}
+
+.patrick {
+	grid-area: test-4;
+	background-color: hsl(219, 29%, 14%);
+}
